@@ -34,10 +34,9 @@ services:
       - path: .env
         required: true
     volumes:
+      - ./srv/custom.ini:/usr/local/etc/php/conf.d/custom.ini
       - ./srv/wordpress/:/var/www/html
       - ./themes/krishna-academy/:/var/www/html/wp-content/themes/krishnaacademy
-      - ./plugins/:/var/www/html/wp-content/plugins/new
-      - ./srv/custom.ini:/usr/local/etc/php/conf.d/custom.ini
 
   phpmyadmin:
     image: phpmyadmin:latest
