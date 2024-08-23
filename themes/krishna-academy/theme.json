@@ -212,6 +212,11 @@
       "title": "Header"
     },
     {
+      "area": "loop",
+      "name": "loop",
+      "title": "Loop"
+    },
+    {
       "area": "footer",
       "name": "footer",
       "title": "Footer"
