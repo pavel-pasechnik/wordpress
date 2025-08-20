@@ -48,8 +48,7 @@ jobs:
           files: |
             ${{ steps.build.outputs.zip }}
             dist/**
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.TARGET_REPO_TOKEN }}
 
       - name: Checkout target repo
         uses: actions/checkout@v4
