@@ -65,7 +65,7 @@ jobs:
           RELEASE_DIR=$GITHUB_WORKSPACE/dist
 
           # Синхронизация: архив + демо → корень target
-          rsync -a --delete "$RELEASE_DIR/" "$TARGET_DIR/"
+          rsync -a "$RELEASE_DIR/" "$TARGET_DIR/"
 
           cd "$TARGET_DIR"
           git config user.name "github-actions[bot]"
