@@ -1,4 +1,4 @@
-name: Export KCA theme to standalone repo & Release (Git Updater)
+name: Build & Release KCA Theme
 
 on:
   push:
@@ -7,17 +7,13 @@ on:
       - 'kca-v*'
   workflow_dispatch:
 
-permissions:
-  contents: read
-
-env:
-  SRC_DIR: themes/krishna-consciousness-academy
-  TARGET_REPO: pavel-pasechnik/krishna-consciousness-academy
-
 jobs:
-  export-and-release:
+  release:
     runs-on: ubuntu-latest
     env:
+      SRC_DIR: themes/krishna-consciousness-academy
+      DEMO_DIR: demo/krishna-consciousness-academy
+      TARGET_REPO: pavel-pasechnik/krishna-consciousness-academy
       GH_PAT: ${{ secrets.TARGET_REPO_TOKEN }}
 
     steps:
@@ -25,132 +21,56 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
-          persist-credentials: false
 
-      - name: Validate PAT availability
-        run: |
-          if [ -z "${GH_PAT}" ]; then
-            echo "Error: TARGET_REPO_TOKEN is not available"; exit 1
-          else
-            echo "GH_PAT is present (masked)"
-          fi
-
-      - name: Get tag & repo meta
-        id: meta
-        run: |
-          echo "TAG_NAME=${GITHUB_REF_NAME}" >> $GITHUB_OUTPUT
-          echo "REPO_NAME=${GITHUB_REPOSITORY##*/}" >> $GITHUB_OUTPUT
-
-      - name: Read Version from style.css and match with tag
+      - name: Read Version from style.css
         id: version
         run: |
           FILE="$SRC_DIR/style.css"
-          if [ ! -f "$FILE" ]; then
-            echo "style.css not found in $SRC_DIR"; exit 1
-          fi
-          THEME_VERSION=$(grep -i '^Version:' "$FILE" | cut -d ':' -f 2 | xargs)
-          if [ -z "$THEME_VERSION" ]; then
-            echo "Failed to read Version: from $FILE"; exit 1
-          fi
-          TAG="${{ steps.meta.outputs.TAG_NAME }}"
-          # поддерживаем теги вида kca-1.2.3 и кca-v1.2.3
-          TAG_NOPREFIX="${TAG#kca-}"
-          TAG_STRIPPED="${TAG_NOPREFIX#v}"
-          echo "style.css Version: $THEME_VERSION"
-          echo "Tag: $TAG / Target tag: $TAG_STRIPPED"
-          if [ "$THEME_VERSION" != "$TAG_STRIPPED" ]; then
-            echo "Version in style.css ($THEME_VERSION) must equal stripped tag ($TAG_STRIPPED)"; exit 1
-          fi
-          echo "THEME_VERSION=$THEME_VERSION" >> $GITHUB_OUTPUT
-          echo "TAG_TARGET=$TAG_STRIPPED" >> $GITHUB_OUTPUT
+          VERSION=$(grep -i '^Version:' "$FILE" | cut -d ':' -f 2 | xargs)
+          echo "version=$VERSION" >> $GITHUB_OUTPUT
 
-      - name: Prepare export folder & zip
-        id: pack
+      - name: Build archive
+        id: build
         run: |
-          set -e
-          TAG="${{ steps.version.outputs.TAG_TARGET }}"
-          REPO_SLUG="${TARGET_REPO##*/}"
+          mkdir -p dist
+          ZIP_NAME="krishna-consciousness-academy-${{ steps.version.outputs.version }}.zip"
+          (cd "$SRC_DIR" && zip -r "../../dist/$ZIP_NAME" .)
+          echo "zip=dist/$ZIP_NAME" >> $GITHUB_OUTPUT
 
-          TMP_DIR=$(mktemp -d)
+      - name: Copy demo files
+        run: |
+          mkdir -p dist
+          cp -r $DEMO_DIR/* dist/
 
-          # Copy only the theme subdir
-          rsync -a "$SRC_DIR/" "$TMP_DIR/$REPO_SLUG/" --delete --exclude ".git" --exclude "node_modules" || true
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: |
+            ${{ steps.build.outputs.zip }}
+            dist/**
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-          # Ensure style.css exists in the exported root
-          test -f "$TMP_DIR/$REPO_SLUG/style.css"
-
-          ZIP_PATH_VERSIONED="$TMP_DIR/${REPO_SLUG}-${TAG}.zip"
-          (cd "$TMP_DIR" && zip -r -q "$ZIP_PATH_VERSIONED" "$REPO_SLUG")
-
-
-          echo "zip_path=$ZIP_PATH_VERSIONED" >> $GITHUB_OUTPUT
-          echo "zip_name=$(basename "$ZIP_PATH_VERSIONED")" >> $GITHUB_OUTPUT
-          echo "tmp_dir=$TMP_DIR" >> $GITHUB_OUTPUT
-
-      - name: Checkout target repo (with PAT)
+      - name: Checkout target repo
         uses: actions/checkout@v4
         with:
           repository: ${{ env.TARGET_REPO }}
           token: ${{ env.GH_PAT }}
           path: target
-          fetch-depth: 0
-          persist-credentials: false
           ref: main
 
-      - name: Sync files to target repo
-        run: |
-          set -euo pipefail
-          TARGET_DIR="$GITHUB_WORKSPACE/target"
-
-          echo "ROOT: $(pwd)" && ls -la
-          echo "TARGET_DIR: $TARGET_DIR" && ls -la "$TARGET_DIR" || true
-
-          REPO_SLUG="${TARGET_REPO##*/}"
-          EXPORT_ZIP="${{ steps.pack.outputs.zip_path }}"
-          DEMO_SRC="demo/${REPO_SLUG}"
-
-          # 1) Align local target to remote main
-          git -C "$TARGET_DIR" fetch origin main --prune || true
-          git -C "$TARGET_DIR" checkout -B main || true
-          git -C "$TARGET_DIR" reset --hard origin/main || true
-
-          # Force origin to PAT URL
-          git -C "$TARGET_DIR" remote set-url origin "https://x-access-token:${GH_PAT}@github.com/${TARGET_REPO}.git"
-          git -C "$TARGET_DIR" remote -v
-
-          # 2) Remove any old zips from repo root, then copy new archive to root
-          find "$TARGET_DIR" -maxdepth 1 -type f -name "${REPO_SLUG}-*.zip" -print -delete || true
-          cp "$EXPORT_ZIP" "$TARGET_DIR/"
-
-          # 3) Sync demo/<slug> CONTENTS directly into repo root (if exists)
-          if [ -d "$DEMO_SRC" ]; then
-            echo "Sync demo from $DEMO_SRC to repo root"
-            rsync -a --delete "$DEMO_SRC/" "$TARGET_DIR/"
-          else
-            echo "No demo folder at $DEMO_SRC (skip)"
-          fi
-
-          # 4) Commit & push
-          git -C "$TARGET_DIR" config user.name "github-actions[bot]"
-          git -C "$TARGET_DIR" config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-
-          if [ -n "$(git -C "$TARGET_DIR" status --porcelain)" ]; then
-            git -C "$TARGET_DIR" add -A
-            git -C "$TARGET_DIR" commit -m "Publish ${REPO_SLUG} ${{ steps.version.outputs.TAG_TARGET }} to repo root; include demo/"
-            git -C "$TARGET_DIR" push --force "https://x-access-token:${GH_PAT}@github.com/${TARGET_REPO}.git" HEAD:main
-          else
-            echo "No changes to commit"
-          fi
-
-      - name: Tag target repo
+      - name: Push release content into target repo root
         run: |
           set -e
-          TARGET_DIR="$GITHUB_WORKSPACE/target"
-          git -C "$TARGET_DIR" fetch --tags
-          TAG="${{ steps.version.outputs.TAG_TARGET }}"
-          if git -C "$TARGET_DIR" rev-parse -q --verify "refs/tags/$TAG" >/dev/null; then
-            echo "Tag $TAG already exists in target repo. Skipping tag creation."
-          else
-            git -C "$TARGET_DIR" tag "$TAG"
-            git -C "$TARGET_DIR" push "https://x-access-token:${GH_PAT}@github.com/${TARGET_REPO}.git" "$TAG"
-          fi
+          TARGET_DIR=$GITHUB_WORKSPACE/target
+          RELEASE_DIR=$GITHUB_WORKSPACE/dist
+
+          # Синхронизация: архив + демо → корень target
+          rsync -a --delete "$RELEASE_DIR/" "$TARGET_DIR/"
+
+          cd "$TARGET_DIR"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "Release ${{ steps.version.outputs.version }}: publish to main"
+          git push origin main
