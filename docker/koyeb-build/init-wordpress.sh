@@ -90,6 +90,15 @@ if (!defined('FORCE_SSL_ADMIN')) define('FORCE_SSL_ADMIN', true);
 // Behind proxy: trust X-Forwarded-Proto to detect HTTPS (Koyeb)
 $__xfp = $_SERVER['HTTP_X_FORWARDED_PROTO'] ?? '';
 if ($__xfp === 'https') { $_SERVER['HTTPS'] = 'on'; }
+// Skip redirect for Koyeb health check
+if (
+    ($_SERVER['REQUEST_METHOD'] ?? '') === 'HEAD' &&
+    str_contains($_SERVER['HTTP_USER_AGENT'] ?? '', 'Koyeb Health Check')
+) {
+    header("HTTP/1.1 200 OK");
+    header("Content-Length: 0");
+    exit;
+}
 
 // --- DB SSL support (Aiven etc.) ---
 $__ssl = strtolower((string) getenv('WORDPRESS_DB_SSL'));
@@ -150,6 +159,15 @@ if (!defined('FORCE_SSL_ADMIN')) define('FORCE_SSL_ADMIN', true);
 // Behind proxy: trust X-Forwarded-Proto to detect HTTPS (Koyeb)
 $__xfp = $_SERVER['HTTP_X_FORWARDED_PROTO'] ?? '';
 if ($__xfp === 'https') { $_SERVER['HTTPS'] = 'on'; }
+// Skip redirect for Koyeb health check
+if (
+    ($_SERVER['REQUEST_METHOD'] ?? '') === 'HEAD' &&
+    str_contains($_SERVER['HTTP_USER_AGENT'] ?? '', 'Koyeb Health Check')
+) {
+    header("HTTP/1.1 200 OK");
+    header("Content-Length: 0");
+    exit;
+}
 
 // --- DB SSL support (Aiven etc.) ---
 $__ssl = strtolower((string) getenv('WORDPRESS_DB_SSL'));
