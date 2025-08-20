@@ -47,7 +47,7 @@ jobs:
         with:
           files: |
             ${{ steps.build.outputs.zip }}
-            dist/**
+            dist/
           token: ${{ secrets.TARGET_REPO_TOKEN }}
 
       - name: Checkout target repo
