@@ -23,7 +23,6 @@
 }
 
 .front-page-section .wp-block-media-text {
-  display: flex;
   margin: 10px 0;
 }
 
@@ -42,8 +41,9 @@
 }
 
 .front-page-section .wp-block-media-text .wp-block-media-text__media img {
+  max-width: 100%;
   margin: 0 auto;
-  padding: 10px;
+  padding: 10px
 }
 
 .front-page-section .wp-block-heading {

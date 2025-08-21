@@ -108,7 +108,7 @@
   text-shadow: 1px 1px 2px rgb(0 0 0 / 50%);
 }
 
-.course-card .figure {
+.course-card figure {
   top: -30px;
   max-width: 30%;
   margin: 0;
@@ -144,7 +144,7 @@
     gap: 60px;
   }
 
-  .course-card .figure {
+  .course-card figure {
   top: -40px;
   }
 
@@ -162,7 +162,7 @@
     font-size: 28px;
   }
 
-  .course-card .figure {
+  .course-card figure {
   top: -40px;
   }
 }
@@ -182,7 +182,7 @@
     margin-top: 60px;
   }
 
-  .course-card .figure {
+  .course-card figure {
     top: -60px;
   }
 
@@ -228,7 +228,7 @@
     padding: 30px;
   }
 
-  .course-card .figure {
+  .course-card figure {
     top: -80px;
   }
 

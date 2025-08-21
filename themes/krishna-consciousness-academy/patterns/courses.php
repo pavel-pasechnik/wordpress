@@ -38,7 +38,7 @@ $course_cat_id = ka_cat_courses_id('courses');
 <!-- wp:group -->
 <div class="wp-block-group course-card-content">
 	<!-- wp:post-excerpt {"className":"course-card-excerpt"} /-->
-	<!-- wp:post-featured-image {"className":"figure","isLink":true} /-->
+	<!-- wp:post-featured-image {"isLink":true} /-->
 </div>
 <!-- /wp:group -->
 <!-- wp:post-title {"className":"course-card-title", "isLink":true} /-->
