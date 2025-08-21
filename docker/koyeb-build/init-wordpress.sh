@@ -117,6 +117,22 @@ if ($__ssl === '1' || $__ssl === 'true' || $__ssl === 'required') {
         define('MYSQL_SSL_CA', $ca_path);
     }
 }
+// --- Advanced Media Offloader (Cloudflare R2) ---
+if (!defined('ADVMO_CLOUDFLARE_R2_KEY')) {
+  define('ADVMO_CLOUDFLARE_R2_KEY', getenv('ADVMO_CLOUDFLARE_R2_KEY'));
+}
+if (!defined('ADVMO_CLOUDFLARE_R2_SECRET')) {
+  define('ADVMO_CLOUDFLARE_R2_SECRET', getenv('ADVMO_CLOUDFLARE_R2_SECRET'));
+}
+if (!defined('ADVMO_CLOUDFLARE_R2_ENDPOINT')) {
+  define('ADVMO_CLOUDFLARE_R2_ENDPOINT', getenv('ADVMO_CLOUDFLARE_R2_ENDPOINT'));
+}
+if (!defined('ADVMO_CLOUDFLARE_R2_BUCKET')) {
+  define('ADVMO_CLOUDFLARE_R2_BUCKET', getenv('ADVMO_CLOUDFLARE_R2_BUCKET'));
+}
+if (!defined('ADVMO_CLOUDFLARE_R2_DOMAIN')) {
+  define('ADVMO_CLOUDFLARE_R2_DOMAIN', getenv('ADVMO_CLOUDFLARE_R2_DOMAIN'));
+}
 // Security hardening: disable theme/plugin file editor in admin
 if (!defined('DISALLOW_FILE_EDIT')) define('DISALLOW_FILE_EDIT', true);
 PHP
@@ -186,6 +202,22 @@ if ($__ssl === '1' || $__ssl === 'true' || $__ssl === 'required') {
         define('MYSQL_SSL_CA', $ca_path);
     }
 }
+// --- Advanced Media Offloader (Cloudflare R2) ---
+if (!defined('ADVMO_CLOUDFLARE_R2_KEY')) {
+  define('ADVMO_CLOUDFLARE_R2_KEY', getenv('ADVMO_CLOUDFLARE_R2_KEY'));
+}
+if (!defined('ADVMO_CLOUDFLARE_R2_SECRET')) {
+  define('ADVMO_CLOUDFLARE_R2_SECRET', getenv('ADVMO_CLOUDFLARE_R2_SECRET'));
+}
+if (!defined('ADVMO_CLOUDFLARE_R2_ENDPOINT')) {
+  define('ADVMO_CLOUDFLARE_R2_ENDPOINT', getenv('ADVMO_CLOUDFLARE_R2_ENDPOINT'));
+}
+if (!defined('ADVMO_CLOUDFLARE_R2_BUCKET')) {
+  define('ADVMO_CLOUDFLARE_R2_BUCKET', getenv('ADVMO_CLOUDFLARE_R2_BUCKET'));
+}
+if (!defined('ADVMO_CLOUDFLARE_R2_DOMAIN')) {
+  define('ADVMO_CLOUDFLARE_R2_DOMAIN', getenv('ADVMO_CLOUDFLARE_R2_DOMAIN'));
+}
 // Security hardening: disable theme/plugin file editor in admin
 if (!defined('DISALLOW_FILE_EDIT')) define('DISALLOW_FILE_EDIT', true);
 PHP
@@ -211,10 +243,10 @@ if ! ${WP} core is-installed >/dev/null 2>&1; then
   ${WP} rewrite structure '/%postname%/' --hard || true
   ${WP} rewrite flush --hard || true
 
-  # --- Install Offload Media – Cloud Storage plugin ---
-  if ! ${WP} plugin is-installed offload-media-cloud-storage; then
-    echo "Installing Offload Media – Cloud Storage plugin..."
-    ${WP} plugin install offload-media-cloud-storage --activate
+  # --- Install Advanced Media Offloader plugin ---
+  if ! ${WP} plugin is-installed advanced-media-offloader; then
+    echo "Installing Advanced Media Offloader plugin..."
+    ${WP} plugin install advanced-media-offloader --activate
   fi
 fi
 
