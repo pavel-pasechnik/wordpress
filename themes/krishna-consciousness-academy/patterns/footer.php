@@ -28,7 +28,7 @@
 	<!-- wp:group {"className":"footer-docs"} -->
 	<div class="wp-block-group footer-docs"><!-- wp:media-text {"mediaId":0,"mediaType":"image"} -->
 		<div class="wp-block-media-text is-stacked-on-mobile">
-			<figure class="wp-block-media-text__media footer-certificate-icon"><img src="" alt="certificate icon" /></figure>
+			<figure class="wp-block-media-text__media"><img src="" alt="certificate icon" /></figure>
 			<div class="wp-block-media-text__content"><!-- wp:paragraph {"className":"footer-certificater"} -->
 				<p class="footer-certificater">
 					<a href="https://drive.google.com/file/d/1_bTzrO_c2qbLM6qSInuFyrbVV11XQW5T/view?usp=drive_link" class="footer-link">Свідоцтво академії</a>
@@ -40,7 +40,7 @@
 
 		<!-- wp:media-text {"mediaId":0,"mediaType":"image"} -->
 		<div class="wp-block-media-text is-stacked-on-mobile">
-			<figure class="wp-block-media-text__media footer-charter-icon"><img src="" alt="charter icon" /></figure>
+			<figure class="wp-block-media-text__media"><img src="" alt="charter icon" /></figure>
 			<div class="wp-block-media-text__content"><!-- wp:paragraph {"className":"footer-charter"} -->
 				<p class="footer-charter">
 					<a href="https://drive.google.com/file/d/1iUkK62lsl1lPytgVVtAKOfE29ftnmsIW/view?usp=drive_link" class="footer-link">Статут академії</a>

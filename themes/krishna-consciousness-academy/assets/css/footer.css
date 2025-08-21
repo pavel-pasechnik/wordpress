@@ -61,8 +61,9 @@ footer .wp-block-media-text > .wp-block-media-text__content {
   text-wrap: nowrap;
 }
 
-.footer-charter-icon img,
-.footer-certificate-icon img {
+
+
+footer .wp-block-media-text figure img {
   display: block;
   width: 30px;
   padding: 0;
@@ -102,8 +103,7 @@ footer .wp-block-media-text > .wp-block-media-text__content {
     font-size: 19px;
   }
 
-  .footer-charter-icon img,
-  .footer-certificate-icon img {
+  footer .wp-block-media-text figure img {
     width: 60px;
   }
 

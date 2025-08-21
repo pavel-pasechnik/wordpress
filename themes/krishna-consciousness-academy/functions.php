@@ -3,21 +3,12 @@
 /**
  * Krishna Consciousness Academy functions and definitions.
  *
- * @link https://developer.wordpress.org/themes/basics/theme-functions/
- *
- * @package WordPress
- * @subpackage Twenty_Twenty_Five
- * @since Krishna Consciousness Academy 1.0
  */
 
 // Adds theme support for post formats.
 if (! function_exists('krishna_consciousness_academy_post_format_setup')) :
 	/**
 	 * Adds theme support for post formats.
-	 *
-	 * @since Krishna Consciousness Academy 1.0
-	 *
-	 * @return void
 	 */
 	function krishna_consciousness_academy_post_format_setup()
 	{
@@ -44,9 +35,6 @@ if (! function_exists('krishna_consciousness_academy_editor_style')) :
 	/**
 	 * Enqueues editor-style.css in the editors.
 	 *
-	 * @since Krishna Consciousness Academy 1.0
-	 *
-	 * @return void
 	 */
 	function krishna_consciousness_academy_editor_style()
 	{
@@ -75,9 +63,6 @@ if (! function_exists('krishna_consciousness_academy_enqueue_styles')) :
 	/**
 	 * Enqueues style.css and additional CSS files with cache busting.
 	 *
-	 * @since Krishna Consciousness Academy 1.0
-	 *
-	 * @return void
 	 */
 	function krishna_consciousness_academy_enqueue_styles()
 	{
@@ -121,9 +106,6 @@ if (! function_exists('krishna_consciousness_academy_enqueue_scripts')) :
 	/**
 	 * Enqueue custom JS files with cache busting and defer.
 	 *
-	 * @since Krishna Consciousness Academy 1.0
-	 *
-	 * @return void
 	 */
 	function krishna_consciousness_academy_enqueue_scripts()
 	{
@@ -158,9 +140,6 @@ if (! function_exists('krishna_consciousness_academy_block_styles')) :
 	/**
 	 * Registers custom block styles.
 	 *
-	 * @since Krishna Consciousness Academy 1.0
-	 *
-	 * @return void
 	 */
 	function krishna_consciousness_academy_block_styles()
 	{
@@ -188,9 +167,6 @@ if (! function_exists('krishna_consciousness_academy_pattern_categories')) :
 	/**
 	 * Registers pattern categories.
 	 *
-	 * @since Krishna Consciousness Academy 1.0
-	 *
-	 * @return void
 	 */
 	function krishna_consciousness_academy_pattern_categories()
 	{
@@ -219,9 +195,6 @@ if (! function_exists('krishna_consciousness_academy_register_block_bindings')) 
 	/**
 	 * Registers the post format block binding source.
 	 *
-	 * @since Krishna Consciousness Academy 1.0
-	 *
-	 * @return void
 	 */
 	function krishna_consciousness_academy_register_block_bindings()
 	{
@@ -241,9 +214,6 @@ if (! function_exists('krishna_consciousness_academy_format_binding')) :
 	/**
 	 * Callback function for the post format name block binding source.
 	 *
-	 * @since Krishna Consciousness Academy 1.0
-	 *
-	 * @return string|void Post format name, or nothing if the format is 'standard'.
 	 */
 	function krishna_consciousness_academy_format_binding()
 	{
