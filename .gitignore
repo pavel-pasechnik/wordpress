@@ -19,7 +19,7 @@ themes/twentytwentythree
 themes/index.php
 .intelephense
 .history
-vendor
+/vendor/
 wordpress
 /plugins/git-updater/
 /wp-content/plugins/git-updater/
