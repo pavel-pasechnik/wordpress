@@ -210,6 +210,12 @@ if ! ${WP} core is-installed >/dev/null 2>&1; then
   # Ensure pretty permalinks work on first run
   ${WP} rewrite structure '/%postname%/' --hard || true
   ${WP} rewrite flush --hard || true
+
+  # --- Install Offload Media – Cloud Storage plugin ---
+  if ! ${WP} plugin is-installed offload-media-cloud-storage; then
+    echo "Installing Offload Media – Cloud Storage plugin..."
+    ${WP} plugin install offload-media-cloud-storage --activate
+  fi
 fi
 
 # --- 4) Final validation ---

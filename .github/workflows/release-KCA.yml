@@ -73,3 +73,10 @@ jobs:
           git add -A
           git commit -m "Release ${{ steps.version.outputs.version }}: publish to main"
           git push origin main
+
+      - name: Create tag in target repo
+        run: |
+          cd "$GITHUB_WORKSPACE/target"
+          VERSION="${{ steps.version.outputs.version }}"
+          git tag "v$VERSION" || true
+          git push origin "v$VERSION" || true
