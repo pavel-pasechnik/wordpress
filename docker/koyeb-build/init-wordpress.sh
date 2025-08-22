@@ -117,22 +117,6 @@ if ($__ssl === '1' || $__ssl === 'true' || $__ssl === 'required') {
         define('MYSQL_SSL_CA', $ca_path);
     }
 }
-// --- Advanced Media Offloader (Cloudflare R2) ---
-if (!defined('ADVMO_CLOUDFLARE_R2_KEY')) {
-  define('ADVMO_CLOUDFLARE_R2_KEY', getenv('ADVMO_CLOUDFLARE_R2_KEY'));
-}
-if (!defined('ADVMO_CLOUDFLARE_R2_SECRET')) {
-  define('ADVMO_CLOUDFLARE_R2_SECRET', getenv('ADVMO_CLOUDFLARE_R2_SECRET'));
-}
-if (!defined('ADVMO_CLOUDFLARE_R2_ENDPOINT')) {
-  define('ADVMO_CLOUDFLARE_R2_ENDPOINT', getenv('ADVMO_CLOUDFLARE_R2_ENDPOINT'));
-}
-if (!defined('ADVMO_CLOUDFLARE_R2_BUCKET')) {
-  define('ADVMO_CLOUDFLARE_R2_BUCKET', getenv('ADVMO_CLOUDFLARE_R2_BUCKET'));
-}
-if (!defined('ADVMO_CLOUDFLARE_R2_DOMAIN')) {
-  define('ADVMO_CLOUDFLARE_R2_DOMAIN', getenv('ADVMO_CLOUDFLARE_R2_DOMAIN'));
-}
 // Security hardening: disable theme/plugin file editor in admin
 if (!defined('DISALLOW_FILE_EDIT')) define('DISALLOW_FILE_EDIT', true);
 PHP
@@ -202,22 +186,6 @@ if ($__ssl === '1' || $__ssl === 'true' || $__ssl === 'required') {
         define('MYSQL_SSL_CA', $ca_path);
     }
 }
-// --- Advanced Media Offloader (Cloudflare R2) ---
-if (!defined('ADVMO_CLOUDFLARE_R2_KEY')) {
-  define('ADVMO_CLOUDFLARE_R2_KEY', getenv('ADVMO_CLOUDFLARE_R2_KEY'));
-}
-if (!defined('ADVMO_CLOUDFLARE_R2_SECRET')) {
-  define('ADVMO_CLOUDFLARE_R2_SECRET', getenv('ADVMO_CLOUDFLARE_R2_SECRET'));
-}
-if (!defined('ADVMO_CLOUDFLARE_R2_ENDPOINT')) {
-  define('ADVMO_CLOUDFLARE_R2_ENDPOINT', getenv('ADVMO_CLOUDFLARE_R2_ENDPOINT'));
-}
-if (!defined('ADVMO_CLOUDFLARE_R2_BUCKET')) {
-  define('ADVMO_CLOUDFLARE_R2_BUCKET', getenv('ADVMO_CLOUDFLARE_R2_BUCKET'));
-}
-if (!defined('ADVMO_CLOUDFLARE_R2_DOMAIN')) {
-  define('ADVMO_CLOUDFLARE_R2_DOMAIN', getenv('ADVMO_CLOUDFLARE_R2_DOMAIN'));
-}
 // Security hardening: disable theme/plugin file editor in admin
 if (!defined('DISALLOW_FILE_EDIT')) define('DISALLOW_FILE_EDIT', true);
 PHP
@@ -239,15 +207,16 @@ if ! ${WP} core is-installed >/dev/null 2>&1; then
     --admin_password="${WP_ADMIN_PASS:-admin}" \
     --admin_email="${WP_ADMIN_EMAIL:-admin@example.com}" \
     --skip-email
+
+  # --- Install Offload Media to Cloudflare Images plugin ---
+  if ! ${WP} plugin is-installed cloudflare-images-offloader; then
+    echo "Installing Offload Media to Cloudflare Images plugin..."
+    ${WP} plugin install https://downloads.wordpress.org/plugin/cloudflare-images-offloader.latest-stable.zip --activate
+  fi
+
   # Ensure pretty permalinks work on first run
   ${WP} rewrite structure '/%postname%/' --hard || true
   ${WP} rewrite flush --hard || true
-
-  # --- Install Advanced Media Offloader plugin ---
-  if ! ${WP} plugin is-installed advanced-media-offloader; then
-    echo "Installing Advanced Media Offloader plugin..."
-    ${WP} plugin install advanced-media-offloader --activate
-  fi
 fi
 
 # --- 4) Final validation ---
