@@ -60,7 +60,6 @@
 
 .course-card li {
   align-items: center;
-  justify-content: space-between;
   background-color: var(--wp--preset--color--secondary);
   border-radius: 6px;
 }
@@ -87,8 +86,10 @@
 }
 
 .course-card-content {
+  position: relative;
   display: flex;
   flex-direction: row;
+  align-items: flex-start;
 }
 
 .course-card-excerpt {
@@ -102,6 +103,8 @@
 }
 
 .course-card-excerpt p {
+  margin-right: 10px;
+
   font-family: var(--wp--preset--font-family--primary);
   color: var(--wp--preset--color--primary);
   text-align: justify;
@@ -109,7 +112,12 @@
 }
 
 .course-card figure {
+  position: absolute;
   top: -30px;
+  right: 0;
+
+  flex: 0 0 auto;
+
   max-width: 30%;
   margin: 0;
   padding: 10px;
@@ -180,6 +188,10 @@
 
     height: 100%;
     margin-top: 60px;
+  }
+
+  .course-card-excerpt p {
+    margin-right: 20px;
   }
 
   .course-card figure {

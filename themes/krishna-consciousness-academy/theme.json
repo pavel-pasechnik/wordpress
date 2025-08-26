@@ -1,327 +1,319 @@
 {
-	"$schema": "https://schemas.wp.org/trunk/theme.json",
-	"version": 3,
-	"settings": {
-		"appearanceTools": true,
-		"border": {
-			"color": true,
-			"radius": true,
-			"style": true,
-			"width": true
-		},
-		"color": {
-			"background": true,
-			"custom": true,
-			"customDuotone": true,
-			"customGradient": true,
-			"defaultDuotone": false,
-			"defaultGradients": false,
-			"defaultPalette": false,
-			"duotone": [],
-			"gradients": [
-				{
-					"slug": "brand-vertical",
-					"name": "Brand Vertical",
-					"gradient": "linear-gradient(180deg, #57a1e4 0%, #57a1e4CC 100%)"
-				}
-			],
-			"link": true,
-			"palette": [
-				{ "slug": "primary", "color": "#FFFFFF", "name": "Primary" },
-				{
-					"slug": "secondary",
-					"color": "#57a1e4",
-					"name": "Secondary"
-				},
-				{
-					"slug": "opacity-secondary",
-					"color": "#57a1e4CC",
-					"name": "Opacity Secondary"
-				},
-				{
-					"slug": "text-primary",
-					"color": "#C0C0C0",
-					"name": "Primary Text"
-				},
-				{
-					"slug": "text-secondary",
-					"color": "#2B2B2B",
-					"name": "Secondary Text"
-				},
-				{ "slug": "accent", "color": "#FFD700", "name": "Accent" },
-				{
-					"slug": "background",
-					"color": "#FAFAFA",
-					"name": "Background"
-				}
-			],
-			"text": true
-		},
-		"custom": {},
-		"dimensions": {
-			"aspectRatios": [
-				{ "name": "Square", "slug": "square", "ratio": "1" },
-				{ "name": "16:9", "slug": "16-9", "ratio": "16/9" }
-			]
-		},
-		"layout": {
-			"contentSize": "720px",
-			"wideSize": "1200px"
-		},
-		"position": { "sticky": false },
-		"shadow": { "defaultPresets": false },
-		"spacing": {
-			"spacingScale": { "steps": 1 },
-			"blockGap": null,
-			"spacingSizes": [
-				{ "slug": "0", "size": "0", "name": "0" },
-				{ "slug": "xs", "size": "4px", "name": "XS" },
-				{ "slug": "sm", "size": "8px", "name": "SM" },
-				{ "slug": "md", "size": "12px", "name": "MD" },
-				{ "slug": "lg", "size": "16px", "name": "LG" },
-				{ "slug": "xl", "size": "20px", "name": "XL" },
-				{ "slug": "2xl", "size": "24px", "name": "2XL" },
-				{ "slug": "3xl", "size": "32px", "name": "3XL" },
-				{ "slug": "4xl", "size": "40px", "name": "4XL" },
-				{ "slug": "5xl", "size": "60px", "name": "5XL" }
-			]
-		},
-		"typography": {
-			"fluid": true,
-			"customFontSize": true,
-			"dropCap": true,
-			"fontStyle": true,
-			"fontWeight": true,
-			"letterSpacing": true,
-			"lineHeight": true,
-			"fontFamilies": [
-				{
-					"name": "Primary",
-					"slug": "primary",
-					"fontFamily": "GeorgiaPro-CondRegular, sans-serif",
-					"fontFace": [
-						{
-							"fontFamily": "GeorgiaPro-CondRegular",
-							"fontWeight": "400 500 700",
-							"fontStyle": "normal",
-							"fontStretch": "normal",
-							"src": [
-								"file:./assets/fonts/GeorgiaPro-CondRegular.ttf"
-							]
-						}
-					]
-				},
-				{
-					"name": "Secondary",
-					"slug": "secondary",
-					"fontFamily": "GeorgiaPro-CondBold, sans-serif",
-					"fontFace": [
-						{
-							"fontFamily": "GeorgiaPro-CondBold",
-							"fontWeight": "400 500 700",
-							"fontStyle": "normal",
-							"fontStretch": "normal",
-							"src": [
-								"file:./assets/fonts/GeorgiaPro-CondBold.ttf"
-							]
-						}
-					]
-				},
-				{
-					"name": "References",
-					"slug": "references",
-					"fontFamily": "GeorgiaPro-CondLight, sans-serif",
-					"fontFace": [
-						{
-							"fontFamily": "GeorgiaPro-CondLight",
-							"fontWeight": "300 400 500 700",
-							"fontStyle": "normal",
-							"fontStretch": "normal",
-							"src": [
-								"file:./assets/fonts/GeorgiaPro-CondLight.ttf"
-							]
-						}
-					]
-				},
-				{
-					"name": "Quotable primary",
-					"slug": "quotable-primary",
-					"fontFamily": "GeorgiaPro-CondItalic, sans-serif",
-					"fontFace": [
-						{
-							"fontFamily": "GeorgiaPro-CondItalic",
-							"fontWeight": "400 500 700",
-							"fontStyle": "normal",
-							"fontStretch": "normal",
-							"src": [
-								"file:./assets/fonts/GeorgiaPro-CondItalic.ttf"
-							]
-						}
-					]
-				},
-				{
-					"name": "Quotable secondary",
-					"slug": "quotable-secondary",
-					"fontFamily": "Jaipur, sans-serif",
-					"fontFace": [
-						{
-							"fontFamily": "Jaipur",
-							"fontWeight": "400 500 700",
-							"fontStyle": "normal",
-							"fontStretch": "normal",
-							"src": [ "file:./assets/fonts/Jaipur.ttf" ]
-						}
-					]
-				}
-			],
-			"fontSizes": [
-				{ "name": "XS", "slug": "xs", "size": "12px" },
-				{ "name": "SM", "slug": "sm", "size": "14px" },
-				{ "name": "Base", "slug": "base", "size": "16px" },
-				{ "name": "MD", "slug": "md", "size": "18px" },
-				{ "name": "LG", "slug": "lg", "size": "20px" },
-				{ "name": "XL", "slug": "xl", "size": "24px" },
-				{ "name": "2XL", "slug": "2xl", "size": "28px" },
-				{ "name": "3XL", "slug": "3xl", "size": "32px" },
-				{ "name": "4XL", "slug": "4xl", "size": "38px" },
-				{ "name": "5XL", "slug": "5xl", "size": "48px" },
-				{ "name": "6XL", "slug": "6xl", "size": "54px" }
-			]
-		},
-		"useRootPaddingAwareAlignments": false,
-		"blocks": {
-			"core/button": {
-				"border": { "radius": true }
-			},
-			"core/pullquote": {
-				"border": {
-					"color": true,
-					"radius": true,
-					"style": true,
-					"width": true
-				}
-			},
-			"core/image": {
-				"lightbox": { "enabled": true, "allowEditing": true }
-			}
-		}
-	},
-	"styles": {
-		"typography": {
-			"fontFamily": "var:preset|font-family|primary",
-			"fontSize": "var:preset|font-size|base",
-			"lineHeight": "1.6"
-		},
-		"color": {
-			"text": "var:preset|color|text-primary",
-			"background": "var:preset|color|primary"
-		},
-		"elements": {
-			"button": {
-				"color": {
-					"text": "var:preset|color|primary",
-					"background": "var:preset|color|secondary"
-				},
-				"border": { "radius": "60px" },
-				":hover": {
-					"color": { "background": "var:preset|color|secondary" }
-				}
-			},
-			"link": {
-				"color": { "text": "var:preset|color|text-secondary" }
-			},
-			"h1": {
-				"typography": {
-					"fontSize": "var:preset|font-size|5xl",
-					"fontFamily": "var:preset|font-family|secondary"
-				}
-			},
-			"h2": {
-				"typography": {
-					"fontSize": "var:preset|font-size|4xl",
-					"fontFamily": "var:preset|font-family|secondary"
-				}
-			},
-			"h3": {
-				"typography": {
-					"fontSize": "var:preset|font-size|3xl",
-					"fontFamily": "var:preset|font-family|secondary"
-				}
-			},
-			"h4": {
-				"typography": {
-					"fontSize": "var:preset|font-size|xl",
-					"fontFamily": "var:preset|font-family|secondary"
-				}
-			},
-			"h5": {
-				"typography": {
-					"fontSize": "var:preset|font-size|lg",
-					"fontFamily": "var:preset|font-family|secondary"
-				}
-			},
-			"h6": {
-				"typography": {
-					"fontSize": "var:preset|font-size|md",
-					"fontFamily": "var:preset|font-family|secondary"
-				}
-			}
-		},
-		"blocks": {
-			"core/group": {
-				"color": { "text": "var:preset|color|text-secondary" }
-			},
-			"core/image": {
-				"border": { "radius": "8px" }
-			},
-			"core/heading": {
-				"shadow": "0 1px 2px 0 rgb(0 0 0 / 0.05)",
-				"color": { "text": "var:preset|color|text-secondary" }
-			},
-			"core/paragraph": {
-				"typography": {
-					"fontFamily": "var:preset|font-family|primary",
-					"fontSize": "var:preset|font-size|md",
-					"fontStyle": "normal",
-					"fontWeight": "500",
-					"letterSpacing": "0",
-					"lineHeight": "1.6",
-					"textDecoration": "none"
-				},
-				"color": { "text": "var:preset|color|text-secondary" }
-			},
-			"core/list-item": {
-				"color": { "text": "var:preset|color|text-secondary" },
-				"typography": {
-					"fontFamily": "var:preset|font-family|primary",
-					"fontSize": "var:preset|font-size|md"
-				}
-			},
-			"core/navigation": {
-				"typography": {
-					"fontFamily": "var:preset|font-family|primary",
-					"fontSize": "var:preset|font-size|lg"
-				},
-				"color": { "text": "var:preset|color|primary" }
-			},
-			"core/buttons": {
-				"spacing": { "blockGap": "var:preset|spacing|sm" }
-			}
-		}
-	},
-	"customTemplates": [
-		{
-			"name": "front-page",
-			"title": "Front Page",
-			"postTypes": [ "page" ]
-		},
-		{ "name": "page", "title": "Page", "postTypes": [ "page" ] },
-		{ "name": "single", "title": "Single", "postTypes": [ "post" ] }
-	],
-	"templateParts": [
-		{ "area": "header", "name": "header", "title": "Header" },
-		{ "area": "hero", "name": "hero", "title": "Hero" },
-		{ "area": "courses", "name": "courses", "title": "Courses" },
-		{ "area": "footer", "name": "footer", "title": "Footer" }
-	]
+  "$schema": "https://schemas.wp.org/trunk/theme.json",
+  "version": 3,
+  "settings": {
+    "appearanceTools": true,
+    "border": {
+      "color": true,
+      "radius": true,
+      "style": true,
+      "width": true
+    },
+    "color": {
+      "background": true,
+      "custom": true,
+      "customDuotone": true,
+      "customGradient": true,
+      "defaultDuotone": false,
+      "defaultGradients": false,
+      "defaultPalette": false,
+      "duotone": [],
+      "gradients": [
+        {
+          "slug": "brand-vertical",
+          "name": "Brand Vertical",
+          "gradient": "linear-gradient(180deg, #57a1e4 0%, #57a1e4CC 100%)"
+        }
+      ],
+      "link": true,
+      "palette": [
+        { "slug": "primary", "color": "#FFFFFF", "name": "Primary" },
+        {
+          "slug": "secondary",
+          "color": "#57a1e4",
+          "name": "Secondary"
+        },
+        {
+          "slug": "opacity-secondary",
+          "color": "#57a1e4CC",
+          "name": "Opacity Secondary"
+        },
+        {
+          "slug": "text-primary",
+          "color": "#C0C0C0",
+          "name": "Primary Text"
+        },
+        {
+          "slug": "text-secondary",
+          "color": "#2B2B2B",
+          "name": "Secondary Text"
+        },
+        { "slug": "accent", "color": "#FFD700", "name": "Accent" },
+        {
+          "slug": "background",
+          "color": "#FAFAFA",
+          "name": "Background"
+        }
+      ],
+      "text": true
+    },
+    "custom": {},
+    "dimensions": {
+      "aspectRatios": [
+        { "name": "Square", "slug": "square", "ratio": "1" },
+        { "name": "16:9", "slug": "16-9", "ratio": "16/9" }
+      ]
+    },
+    "layout": {
+      "contentSize": "720px",
+      "wideSize": "1200px"
+    },
+    "position": { "sticky": false },
+    "shadow": { "defaultPresets": false },
+    "spacing": {
+      "spacingScale": { "steps": 1 },
+      "blockGap": null,
+      "spacingSizes": [
+        { "slug": "0", "size": "0", "name": "0" },
+        { "slug": "xs", "size": "4px", "name": "XS" },
+        { "slug": "sm", "size": "8px", "name": "SM" },
+        { "slug": "md", "size": "12px", "name": "MD" },
+        { "slug": "lg", "size": "16px", "name": "LG" },
+        { "slug": "xl", "size": "20px", "name": "XL" },
+        { "slug": "2xl", "size": "24px", "name": "2XL" },
+        { "slug": "3xl", "size": "32px", "name": "3XL" },
+        { "slug": "4xl", "size": "40px", "name": "4XL" },
+        { "slug": "5xl", "size": "60px", "name": "5XL" }
+      ]
+    },
+    "typography": {
+      "fluid": true,
+      "customFontSize": true,
+      "dropCap": true,
+      "fontStyle": true,
+      "fontWeight": true,
+      "letterSpacing": true,
+      "lineHeight": true,
+      "fontFamilies": [
+        {
+          "name": "Primary",
+          "slug": "primary",
+          "fontFamily": "GeorgiaPro-CondRegular, sans-serif",
+          "fontFace": [
+            {
+              "fontFamily": "GeorgiaPro-CondRegular",
+              "fontWeight": "400 500 700",
+              "fontStyle": "normal",
+              "fontStretch": "normal",
+              "src": ["file:./assets/fonts/GeorgiaPro-CondRegular.ttf"]
+            }
+          ]
+        },
+        {
+          "name": "Secondary",
+          "slug": "secondary",
+          "fontFamily": "GeorgiaPro-CondBold, sans-serif",
+          "fontFace": [
+            {
+              "fontFamily": "GeorgiaPro-CondBold",
+              "fontWeight": "400 500 700",
+              "fontStyle": "normal",
+              "fontStretch": "normal",
+              "src": ["file:./assets/fonts/GeorgiaPro-CondBold.ttf"]
+            }
+          ]
+        },
+        {
+          "name": "References",
+          "slug": "references",
+          "fontFamily": "GeorgiaPro-CondLight, sans-serif",
+          "fontFace": [
+            {
+              "fontFamily": "GeorgiaPro-CondLight",
+              "fontWeight": "300 400 500 700",
+              "fontStyle": "normal",
+              "fontStretch": "normal",
+              "src": ["file:./assets/fonts/GeorgiaPro-CondLight.ttf"]
+            }
+          ]
+        },
+        {
+          "name": "Quotable primary",
+          "slug": "quotable-primary",
+          "fontFamily": "GeorgiaPro-CondItalic, sans-serif",
+          "fontFace": [
+            {
+              "fontFamily": "GeorgiaPro-CondItalic",
+              "fontWeight": "400 500 700",
+              "fontStyle": "normal",
+              "fontStretch": "normal",
+              "src": ["file:./assets/fonts/GeorgiaPro-CondItalic.ttf"]
+            }
+          ]
+        },
+        {
+          "name": "Quotable secondary",
+          "slug": "quotable-secondary",
+          "fontFamily": "Jaipur, sans-serif",
+          "fontFace": [
+            {
+              "fontFamily": "Jaipur",
+              "fontWeight": "400 500 700",
+              "fontStyle": "normal",
+              "fontStretch": "normal",
+              "src": ["file:./assets/fonts/Jaipur.ttf"]
+            }
+          ]
+        }
+      ],
+      "fontSizes": [
+        { "name": "XS", "slug": "xs", "size": "12px" },
+        { "name": "SM", "slug": "sm", "size": "14px" },
+        { "name": "Base", "slug": "base", "size": "16px" },
+        { "name": "MD", "slug": "md", "size": "18px" },
+        { "name": "LG", "slug": "lg", "size": "20px" },
+        { "name": "XL", "slug": "xl", "size": "24px" },
+        { "name": "2XL", "slug": "2xl", "size": "28px" },
+        { "name": "3XL", "slug": "3xl", "size": "32px" },
+        { "name": "4XL", "slug": "4xl", "size": "38px" },
+        { "name": "5XL", "slug": "5xl", "size": "48px" },
+        { "name": "6XL", "slug": "6xl", "size": "54px" }
+      ]
+    },
+    "useRootPaddingAwareAlignments": false,
+    "blocks": {
+      "core/button": {
+        "border": { "radius": true }
+      },
+      "core/pullquote": {
+        "border": {
+          "color": true,
+          "radius": true,
+          "style": true,
+          "width": true
+        }
+      },
+      "core/image": {
+        "lightbox": { "enabled": true, "allowEditing": true }
+      }
+    }
+  },
+  "styles": {
+    "typography": {
+      "fontFamily": "var:preset|font-family|primary",
+      "fontSize": "var:preset|font-size|base",
+      "lineHeight": "1.6"
+    },
+    "color": {
+      "text": "var:preset|color|text-primary",
+      "background": "var:preset|color|primary"
+    },
+    "elements": {
+      "button": {
+        "color": {
+          "text": "var:preset|color|primary",
+          "background": "var:preset|color|secondary"
+        },
+        "border": { "radius": "60px" },
+        ":hover": {
+          "color": { "background": "var:preset|color|secondary" }
+        }
+      },
+      "link": {
+        "color": { "text": "var:preset|color|text-secondary" }
+      },
+      "h1": {
+        "typography": {
+          "fontSize": "var:preset|font-size|5xl",
+          "fontFamily": "var:preset|font-family|secondary"
+        }
+      },
+      "h2": {
+        "typography": {
+          "fontSize": "var:preset|font-size|4xl",
+          "fontFamily": "var:preset|font-family|secondary"
+        }
+      },
+      "h3": {
+        "typography": {
+          "fontSize": "var:preset|font-size|3xl",
+          "fontFamily": "var:preset|font-family|secondary"
+        }
+      },
+      "h4": {
+        "typography": {
+          "fontSize": "var:preset|font-size|xl",
+          "fontFamily": "var:preset|font-family|secondary"
+        }
+      },
+      "h5": {
+        "typography": {
+          "fontSize": "var:preset|font-size|lg",
+          "fontFamily": "var:preset|font-family|secondary"
+        }
+      },
+      "h6": {
+        "typography": {
+          "fontSize": "var:preset|font-size|md",
+          "fontFamily": "var:preset|font-family|secondary"
+        }
+      }
+    },
+    "blocks": {
+      "core/group": {
+        "color": { "text": "var:preset|color|text-secondary" }
+      },
+      "core/image": {
+        "border": { "radius": "8px" }
+      },
+      "core/heading": {
+        "shadow": "0 1px 2px 0 rgb(0 0 0 / 0.05)",
+        "color": { "text": "var:preset|color|text-secondary" }
+      },
+      "core/paragraph": {
+        "typography": {
+          "fontFamily": "var:preset|font-family|primary",
+          "fontSize": "var:preset|font-size|md",
+          "fontStyle": "normal",
+          "fontWeight": "500",
+          "letterSpacing": "0",
+          "lineHeight": "1.6",
+          "textDecoration": "none"
+        },
+        "color": { "text": "var:preset|color|text-secondary" }
+      },
+      "core/list-item": {
+        "color": { "text": "var:preset|color|text-secondary" },
+        "typography": {
+          "fontFamily": "var:preset|font-family|primary",
+          "fontSize": "var:preset|font-size|md"
+        }
+      },
+      "core/navigation": {
+        "typography": {
+          "fontFamily": "var:preset|font-family|primary",
+          "fontSize": "var:preset|font-size|lg"
+        },
+        "color": { "text": "var:preset|color|primary" }
+      },
+      "core/buttons": {
+        "spacing": { "blockGap": "var:preset|spacing|sm" }
+      }
+    }
+  },
+  "customTemplates": [
+    {
+      "name": "front-page",
+      "title": "Front Page",
+      "postTypes": ["page"]
+    },
+    { "name": "page", "title": "Page", "postTypes": ["page"] },
+    { "name": "single", "title": "Single", "postTypes": ["post"] }
+  ],
+  "templateParts": [
+    { "area": "header", "name": "header", "title": "Header" },
+    { "area": "hero", "name": "hero", "title": "Hero" },
+    { "area": "courses", "name": "courses", "title": "Courses" },
+    { "area": "footer", "name": "footer", "title": "Footer" }
+  ]
 }
