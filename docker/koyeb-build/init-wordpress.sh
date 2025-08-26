@@ -71,6 +71,12 @@ if [ ! -f "${DOCROOT}/wp-config.php" ]; then
     --force \
     --skip-check
 
+  ${WP} config set ADVMO_CLOUDFLARE_R2_KEY "${ADVMO_CLOUDFLARE_R2_KEY}" --type=constant
+  ${WP} config set ADVMO_CLOUDFLARE_R2_SECRET "${ADVMO_CLOUDFLARE_R2_SECRET}" --type=constant
+  ${WP} config set ADVMO_CLOUDFLARE_R2_ENDPOINT "${ADVMO_CLOUDFLARE_R2_ENDPOINT}" --type=constant
+  ${WP} config set ADVMO_CLOUDFLARE_R2_BUCKET "${ADVMO_CLOUDFLARE_R2_BUCKET}" --type=constant
+  ${WP} config set ADVMO_CLOUDFLARE_R2_DOMAIN "${ADVMO_CLOUDFLARE_R2_DOMAIN}" --type=constant
+
   echo "DB resolved as host=${DB_HOST_ONLY} port=${DB_PORT_ONLY}"
 
   # Write custom constants to a separate include to avoid quoting issues
@@ -140,6 +146,12 @@ PHP
       --dbhost="${DB_HOSTPORT}" \
       --force \
       --skip-check
+
+    ${WP} config set ADVMO_CLOUDFLARE_R2_KEY "${ADVMO_CLOUDFLARE_R2_KEY}" --type=constant
+    ${WP} config set ADVMO_CLOUDFLARE_R2_SECRET "${ADVMO_CLOUDFLARE_R2_SECRET}" --type=constant
+    ${WP} config set ADVMO_CLOUDFLARE_R2_ENDPOINT "${ADVMO_CLOUDFLARE_R2_ENDPOINT}" --type=constant
+    ${WP} config set ADVMO_CLOUDFLARE_R2_BUCKET "${ADVMO_CLOUDFLARE_R2_BUCKET}" --type=constant
+    ${WP} config set ADVMO_CLOUDFLARE_R2_DOMAIN "${ADVMO_CLOUDFLARE_R2_DOMAIN}" --type=constant
 
     echo "DB resolved as host=${DB_HOST_ONLY} port=${DB_PORT_ONLY}"
 

@@ -48,6 +48,13 @@ if [[ "$SKIP_WP_SETUP" == false ]]; then
 
   # Set ElasticPress host constant in wp-config.php
   wp config set EP_HOST http://elasticsearch:9200 --type=constant --allow-root
+
+  # Local development: define Cloudflare R2 constants from ENV
+  wp config set ADVMO_CLOUDFLARE_R2_KEY "${ADVMO_CLOUDFLARE_R2_KEY}" --type=constant --allow-root
+  wp config set ADVMO_CLOUDFLARE_R2_SECRET "${ADVMO_CLOUDFLARE_R2_SECRET}" --type=constant --allow-root
+  wp config set ADVMO_CLOUDFLARE_R2_ENDPOINT "${ADVMO_CLOUDFLARE_R2_ENDPOINT}" --type=constant --allow-root
+  wp config set ADVMO_CLOUDFLARE_R2_BUCKET "${ADVMO_CLOUDFLARE_R2_BUCKET}" --type=constant --allow-root
+  wp config set ADVMO_CLOUDFLARE_R2_DOMAIN "${ADVMO_CLOUDFLARE_R2_DOMAIN}" --type=constant --allow-root
 fi
 
 # ? To reapply the configuration: docker exec -it wordpress-wordpress-1 init-wordpress.sh --reinit

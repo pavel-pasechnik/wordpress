@@ -1,0 +1,460 @@
+/* General styles */
+#advmo .wrap {
+	max-width: 1280px;
+	margin: 0 auto;
+	padding: 0 30px;
+}
+
+/* Form styles */
+#advmo form {
+	margin-top: 20px;
+}
+
+@media screen and (max-width: 782px) {
+	/* It's 100% by default but it causes the form to be too wide on mobile devices */
+	.form-table {
+		width: auto;
+	}
+}
+
+#advmo .form-table th {
+	font-weight: 600;
+	padding: 20px 10px 20px 0;
+	width: 200px;
+	vertical-align: top;
+}
+
+#advmo .form-table td {
+	padding: 20px 10px;
+	vertical-align: top;
+}
+
+/* Field styles */
+#advmo select,
+#advmo input[type="text"],
+#advmo input[type="password"] {
+	width: 100%;
+	max-width: 400px;
+	padding: 8px;
+	border: 1px solid #ddd;
+	border-radius: 4px;
+}
+
+/* Checkbox style */
+#advmo input[type="checkbox"] {
+	margin-right: 10px;
+}
+
+/* Description style */
+#advmo .description {
+	font-style: italic;
+	color: #666;
+	margin-top: 5px;
+}
+
+/* Responsive design */
+@media screen and (max-width: 782px) {
+	#advmo .form-table th,
+	#advmo .form-table td {
+		display: block;
+		width: 100%;
+		padding: 10px 0;
+	}
+
+	#advmo .form-table th {
+		padding-bottom: 0;
+	}
+}
+
+/* Custom styles for credential fields */
+#advmo .advmo-credentials-field {
+	margin-bottom: 15px;
+}
+
+#advmo .advmo-credentials-field label {
+	display: block;
+	margin-bottom: 5px;
+	font-weight: 600;
+}
+
+/* Notification styles */
+#advmo .advmo-notification {
+	padding: 10px 15px;
+	border-radius: 3px;
+	margin-top: 20px;
+}
+
+#advmo .advmo-notification.success {
+	background-color: #dff0d8;
+	border: 1px solid #d6e9c6;
+	color: #3c763d;
+}
+
+#advmo .advmo-notification.error {
+	background-color: #f2dede;
+	border: 1px solid #ebccd1;
+	color: #a94442;
+}
+
+/* Custom styles for the "Test connection" button */
+
+.advmo-test-connection-container {
+	margin-top: 10px;
+}
+/* Feedback Messages */
+.advmo-last-check {
+	padding: 10px;
+	margin-bottom: 10px !important;
+	border-radius: 4px;
+	transition: opacity 0.5s ease-out;
+	width: 60%;
+}
+
+@media screen and (max-width: 782px) {
+	.advmo-last-check {
+		width: 100%;
+	}
+}
+
+.advmo-last-check.connected {
+	background: #edfaef;
+	color: #287d3c;
+	border-left: 4px solid #28a745;
+}
+
+.advmo-last-check.disconnected {
+	background: #fff5f5;
+	color: #da1414;
+	border-left: 4px solid #dc3545;
+}
+
+.fade-out {
+	opacity: 0;
+}
+
+/* Bulk Offload */
+
+.advmo-field.advmo-bulk-offload-media th {
+	display: none;
+}
+
+#bulk-offload-button {
+	margin: 0.6rem 0;
+}
+
+#bulk-offload-cancel-button {
+	margin: 1rem 0;
+	display: inline-block;
+}
+/* Progress Bar */
+.progress-bar-container {
+	width: 100%;
+	background-color: #e0e0e0;
+	padding: 3px;
+	border-radius: 3px;
+	margin-top: 20px;
+}
+
+#offload-progress {
+	width: 0;
+	height: 20px;
+	background-color: #0073aa;
+	border-radius: 2px;
+	transition: width 0.5s;
+}
+
+#progress-title {
+	font-size: 16px;
+	font-weight: bold;
+	margin-bottom: 10px;
+}
+
+#progress-text {
+	margin-top: 10px;
+	font-weight: bold;
+}
+
+/* Form table styles */
+#advmo .advmo-section {
+	background-color: #f9f9f9;
+	border: 1px solid #e0e0e0;
+	box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); /* Light shadow */
+	margin-top: 2rem;
+}
+
+#advmo .advmo-section-header {
+	padding: 1rem;
+	border-bottom: 1px solid #e5e5e5;
+	font-size: 1rem;
+	color: #666666;
+	font-weight: normal;
+	background: #fff;
+}
+
+#advmo .advmo-section-header h2 {
+	font-size: 1.2rem;
+	font-weight: bold;
+	color: #333333;
+}
+
+#advmo .form-table {
+	margin: 0;
+}
+
+#advmo .form-table th {
+	background-color: #f9f9f9;
+	border-bottom: 1px solid #e5e5e5;
+	font-size: 0.9125rem;
+}
+
+#advmo .form-table td {
+	border-bottom: 1px solid #f0f0f0;
+}
+
+#advmo .form-table tr:last-child th,
+#advmo .form-table tr:last-child td {
+	border-bottom: none;
+}
+
+#advmo .form-table tbody tr th {
+	vertical-align: top;
+	padding-left: 1rem;
+}
+
+/* Submit button styling */
+#advmo .submit {
+	margin-top: 30px;
+	text-align: center;
+}
+
+#advmo .button-primary {
+	background-color: #0073aa; /* WordPress blue */
+	color: #ffffff;
+	font-weight: bold;
+	padding: 10px 20px;
+	border-radius: 4px;
+	border: none;
+	cursor: pointer;
+	transition: background-color 0.2s ease-in-out;
+}
+
+#advmo .button-primary:hover,
+#advmo .button-primary:focus {
+	background-color: #005177;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 782px) {
+	#advmo .form-table th,
+	#advmo .form-table td {
+		padding: 15px;
+	}
+}
+
+.advmo-radio-group {
+	margin-bottom: 20px;
+}
+
+.advmo-radio-option {
+	margin-bottom: 20px;
+}
+
+.advmo-radio-option input[type="radio"] {
+	margin-right: 10px;
+}
+
+.advmo-radio-option label {
+	font-weight: bold;
+	display: inline-block;
+	margin-bottom: 5px;
+	cursor: pointer;
+}
+
+.advmo-radio-option .description {
+	margin-left: 24px;
+	color: #666;
+	font-size: 13px;
+	line-height: 1.5;
+}
+
+.advmo-radio-option input[type="radio"]:checked + label {
+	color: #0073aa;
+}
+
+@media screen and (max-width: 782px) {
+	.advmo-radio-option {
+		margin-bottom: 25px;
+	}
+}
+
+/* Checkboxes */
+.advmo-checkbox-option {
+	margin-bottom: 20px;
+	padding-left: 24px;
+	position: relative;
+}
+
+.advmo-checkbox-option input[type="checkbox"] {
+	position: absolute;
+	left: 0;
+	top: 5px;
+}
+
+.advmo-checkbox-option label {
+	font-weight: bold;
+	cursor: pointer;
+	display: inline-block;
+	margin-bottom: 5px;
+}
+
+.advmo-checkbox-option .description {
+	margin-top: 5px;
+	color: #666;
+	font-size: 13px;
+	line-height: 1.5;
+}
+
+.advmo-checkbox-option input[type="checkbox"]:checked + label {
+	color: #0073aa;
+}
+
+/* Input below Checkbox */
+
+.advmo-checkbox-option input[type="input"]#path_prefix {
+	width: 100%;
+	max-width: 300px;
+	padding: 8px;
+	margin-top: 5px;
+	border: 1px solid #ddd;
+	border-radius: 4px;
+	font-size: 14px;
+	color: #333;
+	transition: all 0.3s ease;
+}
+
+.advmo-checkbox-option input[type="input"]#path_prefix:focus {
+	border-color: #007cba;
+	box-shadow: 0 0 0 1px #007cba;
+	outline: 2px solid transparent;
+}
+
+.advmo-checkbox-option input[type="input"]#path_prefix:disabled {
+	background-color: #f0f0f0;
+	color: #888;
+	cursor: not-allowed;
+}
+
+@media screen and (max-width: 782px) {
+	.advmo-checkbox-option {
+		padding-left: 32px;
+	}
+
+	.advmo-checkbox-option input[type="checkbox"] {
+		width: 25px;
+		height: 25px;
+	}
+
+	.advmo-checkbox-option label {
+		line-height: 25px;
+	}
+}
+
+.advmo-code-snippet {
+	margin-top: 20px;
+	padding: 10px;
+	border-radius: 3px;
+	background-color: #f9f9f9;
+	border: 1px;
+}
+
+/* Add Your CSS Codes Here */
+#wpcontent {
+	background: #f0f0f1;
+	padding: 0;
+}
+
+@media (max-width: 600px) {
+	.advmo-topbar {
+		position: relative;
+		top: 46px;
+	}
+}
+
+.advmo-topbar .advmo-header {
+	display: flex;
+	flex-direction: row;
+	background: #fff;
+	padding: 23px 30px;
+}
+.advmo-topbar .advmo-header h1 {
+	font-size: 1.1rem;
+	display: flex;
+	align-items: center;
+	gap: 0.6rem;
+	color: #424242;
+}
+
+.advmo-topbar .advmo-header a {
+	display: flex;
+	align-items: center;
+	font-size: clamp(14px, 1.5vw, 16px);
+	font-weight: 500;
+	margin-left: auto;
+	text-decoration: none;
+	color: #6f6f84;
+	outline: none !important;
+	box-shadow: none !important;
+}
+
+.advmo-topbar .advmo-header a:active,
+.advmo-topbar .advmo-header a :hover {
+	color: #3a3a56;
+}
+
+.advmo-topbar .advmo-header a svg {
+	margin-right: 6px;
+}
+
+.advmo-topbar .advmo-menu {
+	padding: 0 30px;
+}
+
+.advmo-topbar .advmo-menu nav {
+	display: flex;
+	flex-wrap: wrap;
+	border-bottom: 1px solid #dadadf;
+}
+
+.advmo-topbar .advmo-menu nav a {
+	padding: 20.5px 0 17.5px;
+	text-decoration: none;
+	font-size: 15px;
+	line-height: 18px;
+	color: #3a3a56;
+	margin-right: 30px;
+	outline: none;
+	box-shadow: none;
+	border-bottom: 3px solid rgba(0, 0, 0, 0);
+	margin-bottom: -1px;
+	transition: all 0.2s ease;
+}
+
+.advmo-topbar .advmo-menu nav a:hover {
+	border-bottom: 3px solid #1a325e;
+}
+
+.advmo-topbar .advmo-menu nav a.active,
+.advmo-topbar.advmo-menu nav a:focus {
+	color: #09092c;
+	font-weight: 500;
+	border-color: #1a325e;
+}
+
+.advmo-code-snippet {
+	direction: ltr;
+	text-align: left;
+	white-space: pre-wrap;
+	background: #f0f0f1;
+	padding: 10px;
+	border-radius: 3px;
+}
