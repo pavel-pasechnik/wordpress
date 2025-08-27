@@ -29,7 +29,7 @@ $cat_id = ka_cat_id('branding');
 <!-- wp:group {"className":"hero-section container"} -->
 <div class="wp-block-group hero-section container">
 	<!-- wp:image {"sizeSlug":"full","className":"hero-picture"} -->
-	<figure class="wp-block-image size-full hero-picture"><img src="" alt="Vaishnav studies" /></figure>
+	<figure class="wp-block-image size-full"><img src="" alt="Vaishnav studies" /></figure>
 	<!-- /wp:image -->
 
 	<!-- wp:group {"className":"hero-promo"} -->
