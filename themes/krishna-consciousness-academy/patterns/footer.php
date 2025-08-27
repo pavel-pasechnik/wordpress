@@ -31,7 +31,7 @@
 			<figure class="wp-block-media-text__media"><img src="" alt="certificate icon" /></figure>
 			<div class="wp-block-media-text__content"><!-- wp:paragraph {"className":"footer-certificater"} -->
 				<p class="footer-certificater">
-					<a href="https://drive.google.com/file/d/1_bTzrO_c2qbLM6qSInuFyrbVV11XQW5T/view?usp=drive_link" class="footer-link">Свідоцтво академії</a>
+					<a href="https://drive.google.com/file/d/1_bTzrO_c2qbLM6qSInuFyrbVV11XQW5T/view?usp=drive_link" class="footer-link" target="_blank" rel="noopener">Свідоцтво академії</a>
 				</p>
 				<!-- /wp:paragraph -->
 			</div>
@@ -43,7 +43,7 @@
 			<figure class="wp-block-media-text__media"><img src="" alt="charter icon" /></figure>
 			<div class="wp-block-media-text__content"><!-- wp:paragraph {"className":"footer-charter"} -->
 				<p class="footer-charter">
-					<a href="https://drive.google.com/file/d/1iUkK62lsl1lPytgVVtAKOfE29ftnmsIW/view?usp=drive_link" class="footer-link">Статут академії</a>
+					<a href="https://drive.google.com/file/d/1iUkK62lsl1lPytgVVtAKOfE29ftnmsIW/view?usp=drive_link" class="footer-link" target="_blank" rel="noopener">Статут академії</a>
 				</p>
 				<!-- /wp:paragraph -->
 			</div>

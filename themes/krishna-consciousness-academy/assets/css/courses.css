@@ -48,6 +48,10 @@
   text-transform: uppercase;
 }
 
+.section-courses a:hover {
+  color: var(--wp--preset--color--accent);
+}
+
 .section-courses .courses-title {
   z-index: 2;
 
@@ -243,5 +247,12 @@
   .course-card figure {
     top: -80px;
   }
+
+  .course-card img {
+  display: block;
+  width: auto;
+  margin: 0 auto;
+  object-fit: cover;
+}
 
 }

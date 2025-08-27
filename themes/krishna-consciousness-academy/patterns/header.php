@@ -14,7 +14,7 @@
 
 ?>
 <!-- wp:cover {"className":"header"} -->
-<div class="wp-block-cover header">
+<div class="wp-block-cover header"><span aria-hidden="true" class="wp-block-cover__background has-background-dim-100 has-background-dim"></span>
 	<div class="wp-block-cover__inner-container"><!-- wp:group {"className":"header-container"} -->
 		<div class="wp-block-group header-container"><!-- wp:group {"className":"header-wrapper"} -->
 			<div class="wp-block-group header-wrapper"><!-- wp:site-logo {"className":"logo"} /-->

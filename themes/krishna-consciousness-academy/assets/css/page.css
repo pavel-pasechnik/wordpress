@@ -31,6 +31,10 @@
   text-align: justify;
 }
 
+.page-main .wp-block-post-content a:hover {
+  color: var(--wp--preset--color--accent);
+}
+
 .page-main .wp-block-post-content .wp-block-group .wp-block-buttons {
   display: flex;
   align-items: center;

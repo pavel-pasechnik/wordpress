@@ -75,6 +75,10 @@ footer .wp-block-media-text figure img {
   text-shadow: 1px 1px 2px rgb(0 0 0 / 50%);
 }
 
+.footer-address a:hover {
+  color: var(--wp--preset--color--accent);
+}
+
 .footer-p {
   padding: 0 0 10px;
 

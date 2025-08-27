@@ -205,7 +205,7 @@
       "lineHeight": "1.6"
     },
     "color": {
-      "text": "var:preset|color|text-primary",
+      "text": "var:preset|color|text-secondary",
       "background": "var:preset|color|primary"
     },
     "elements": {
@@ -220,7 +220,10 @@
         }
       },
       "link": {
-        "color": { "text": "var:preset|color|text-secondary" }
+        "color": { "text": "var:preset|color|text-secondary" },
+        ":hover": {
+          "color": { "text": "var:preset|color|accent" }
+        }
       },
       "h1": {
         "typography": {

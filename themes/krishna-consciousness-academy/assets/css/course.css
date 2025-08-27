@@ -32,6 +32,10 @@
   text-align: justify;
 }
 
+.post-wrapper .wp-block-post-content a:hover {
+  color: var(--wp--preset--color--accent);
+}
+
 .post-wrapper .wp-block-post-content ul {
   margin-left: 10px;
   padding-left: 20px;
